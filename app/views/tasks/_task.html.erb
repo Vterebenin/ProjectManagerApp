@@ -1,8 +1,10 @@
 
 <div class="row clearfix">
 		<% if task.completed? %>
-			
-			<div class="task">
+			<div class="complete">
+				<%= link_to "Mark as Complete", complete_project_task_path(@project, task.id), method: :patch %>
+			</div>
+			<div class="todo_item">
 				<p class="" style="opacity: 0.4;"><strike><%= task.content %></strike></p>
 			</div>
 			<div class="trash">
